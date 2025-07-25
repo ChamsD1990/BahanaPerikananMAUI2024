@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BahanaLautan.Views.Home.Permintaan.PerbaikanKapal.FormPerbaikanKapal"
+             Title="FormPerbaikanKapal">
+
+
+    <ScrollView>
+        <StackLayout
+            Padding="20, 0, 20, 0">
+            <Grid x:Name="MainGrid" HorizontalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <VerticalStackLayout Grid.Row="0" Grid.Column="0" Padding="0, 0, 0, 10"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand">
+                    <Label Text="No Form Permintaan Perbaikan Kapal"/>
+                    <Frame BorderColor="Gray" BackgroundColor="Gray" Padding="0">
+                        <Entry Placeholder="Enter No Form" IsReadOnly="True" 
+                               PlaceholderColor="White" />
+                    </Frame>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Grid.Row="1" Grid.Column="0" Padding="0, 0, 0, 10"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand">
+                    <Label Text="No Reff Atur Kelompok Kerja"/>
+                    <Frame BorderColor="Gray" BackgroundColor="Gray" Padding="0">
+                        <Entry Placeholder="-" IsReadOnly="True" PlaceholderColor="White"/>
+                    </Frame>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Grid.Row="2" Grid.Column="0" Padding="0, 0, 0, 10"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand">
+                    <Label Text="Tanggal"/>
+                    <Frame BorderColor="Gray" BackgroundColor="Gray" Padding="0">
+                        <DatePicker TextColor="White"/>
+                    </Frame>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Grid.Row="3" Grid.Column="0" Padding="0, 0, 0, 10"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand">
+                    <Label Text="User"/>
+                    <Frame BorderColor="Gray" BackgroundColor="Gray" Padding="0">
+                        <Entry Placeholder="Enter User" IsReadOnly="True" PlaceholderColor="White" />
+                    </Frame>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Grid.Row="4" Grid.Column="0" Padding="0, 0, 0, 10"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand">
+                    <Label Text="Jabatan"/>
+                    <Frame BorderColor="Gray" BackgroundColor="Gray" Padding="0">
+                        <Entry Placeholder="Enter Jabatan" IsReadOnly="True" 
+                               PlaceholderColor="White" />
+                    </Frame>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Grid.Row="5" Grid.Column="0" Padding="0, 0, 0, 10"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand">
+                    <Label Text="Kapal"/>
+                    <Frame BorderColor="Gray" BackgroundColor="Gray" Padding="0">
+                        <Entry Placeholder="Enter Kapal" IsReadOnly="True" 
+                               PlaceholderColor="White"/>
+                    </Frame>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Grid.Row="6" Grid.Column="0" Padding="0, 0, 0, 10"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand">
+                    <Label Text="Group"/>
+                    <Frame BorderColor="Gray" BackgroundColor="Gray" Padding="0">
+                        <Entry Placeholder="Enter Group" IsReadOnly="True" 
+                               PlaceholderColor="White" />
+                    </Frame>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Grid.Row="7" Grid.Column="0" Padding="0, 0, 0, 10"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand">
+                    <Label Text="Homebase"/>
+                    <Frame BorderColor="Gray" BackgroundColor="Gray" Padding="0">
+                        <Entry Placeholder="Isi Homebase" IsReadOnly="True" 
+                               PlaceholderColor="White" />
+                    </Frame>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Grid.Row="8" Grid.Column="0" Padding="0, 0, 0, 10"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand">
+                    <Label Text="Note Lokasi Kapal"/>
+                    <Frame BorderColor="Gray" Padding="0">
+                        <Entry Placeholder="Isi manual" />
+                    </Frame>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Grid.Row="9" Grid.Column="0" Padding="0, 0, 0, 10"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand">
+                    <Frame BorderColor="Gray" CornerRadius="8" Padding="10" HasShadow="True">
+                        <VerticalStackLayout>
+                            <Label Text="Uraian Kerusakan 1"/>
+                            <Entry Placeholder="Isi manual" />
+                            <Label Text="Perbaikan yang sedang dilakukan 1"/>
+                            <Entry Placeholder="Isi manual" />
+                            <HorizontalStackLayout
+                                VerticalOptions="FillAndExpand"
+                                HorizontalOptions="FillAndExpand">
+                                <Grid HorizontalOptions="FillAndExpand">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Frame 
+                                        Grid.Row="0" Grid.Column="0"
+                                        BackgroundColor="Blue" 
+                                        Padding="10" CornerRadius="5" 
+                                        HasShadow="True"
+                                        HorizontalOptions="End"
+                                        VerticalOptions="End">
+                                        <HorizontalStackLayout>
+                                            <Label Text="Tambah" TextColor="White" VerticalOptions="Center" Margin="5,0"/>
+                                        </HorizontalStackLayout>
+                                        <Frame.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="OnTambahCicked" />
+                                        </Frame.GestureRecognizers>
+                                    </Frame>
+                                    <Frame 
+                                        Grid.Row="0" Grid.Column="1"
+                                        BackgroundColor="Blue" 
+                                        Padding="10" CornerRadius="5" HasShadow="True"  
+                                        Margin="0,10,0,0"
+                                        HorizontalOptions="End"
+                                        VerticalOptions="End">
+                                        <HorizontalStackLayout>
+                                            <Label Text="List Anggota" TextColor="White" VerticalOptions="Center" Margin="5,0"/>
+                                        </HorizontalStackLayout>
+                                        <Frame.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="OnTambahCicked" />
+                                        </Frame.GestureRecognizers>
+                                    </Frame>
+                                </Grid>
+
+
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+
+
+                <VerticalStackLayout 
+                    Grid.Row="10" Grid.Column="0" Padding="0, 0, 0, 10"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand">
+                    <Frame 
+                BackgroundColor="Blue" 
+                Padding="10" CornerRadius="5" HasShadow="True" Margin="0,10,0,0" 
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand">
+                        <HorizontalStackLayout
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="FillAndExpand">
+                            <Label Text="Simpan" TextColor="White" VerticalOptions="Center" Margin="5,0" VerticalTextAlignment="Center"/>
+                        </HorizontalStackLayout>
+                        <!--
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnListPerbaikan" />
+                </Frame.GestureRecognizers>
+                -->
+                    </Frame>
+                </VerticalStackLayout>
+            </Grid>
+        </StackLayout>
+    </ScrollView>
+
+
+
+</ContentPage>

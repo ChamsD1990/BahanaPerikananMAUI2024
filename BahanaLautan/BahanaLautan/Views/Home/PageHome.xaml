@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BahanaLautan.Views.Home.PageHome"
+             Shell.FlyoutBehavior="Disabled"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.ListView"
+             xmlns:effectsView="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
+             xmlns:local="clr-namespace:BahanaLautan.Source.Repository"
+             Title="PageHome">
+
+    <ContentPage.BindingContext>
+        <local:MenuRepository x:Name="ModelMenu" />
+    </ContentPage.BindingContext>
+
+    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Label
+            x:Name="label_user"
+            HorizontalOptions="StartAndExpand"
+            VerticalOptions="StartAndExpand"
+            FontAttributes="Bold"
+            FontSize="20"   
+            Grid.Row="0" />
+
+        <StackLayout Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="0, 10, 0, 10">
+            <syncfusion:SfListView ItemsSource="{Binding BoxItems}" 
+                                   ItemTemplate="{StaticResource ItemTemplate}" 
+                                   VerticalOptions="FillAndExpand" 
+                                   ItemSize="130" >
+                <syncfusion:SfListView.ItemsLayout >
+                    <syncfusion:GridLayout SpanCount="2" />
+                </syncfusion:SfListView.ItemsLayout>
+            </syncfusion:SfListView>
+        </StackLayout>
+    </Grid>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="ItemTemplate">
+                <ViewCell>
+                    <effectsView:SfEffectsView 
+                        VerticalOptions="FillAndExpand"
+                        HorizontalOptions="FillAndExpand"
+                                   AnimationCompleted="SfEffectsView_AnimationCompleted">
+                        <Frame BorderColor="Gray" CornerRadius="5" Margin="5" Padding="0">
+                            <StackLayout Padding="10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                <Image Source="{Binding ImageSource}" HeightRequest="80" HorizontalOptions="FillAndExpand"/>
+                                <Label Text="{Binding BoxName}" HorizontalOptions="Center" FontSize="15" FontAttributes="Bold"/>
+                            </StackLayout>
+                            <!--  -->
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="getEventMenu"/>
+                            </Frame.GestureRecognizers>
+                        </Frame>
+                    </effectsView:SfEffectsView>
+                </ViewCell>
+            </DataTemplate>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+</ContentPage>

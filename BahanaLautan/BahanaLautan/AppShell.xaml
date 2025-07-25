@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="BahanaLautan.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:views="clr-namespace:BahanaLautan"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarHasShadow="True"
+    Title="BahanaLautan"> 
+
+    <Shell.TitleView>
+        <HorizontalStackLayout x:Name="TitleLayout" VerticalOptions="Fill">
+            <Image 
+                Source="Resources/Images/logo.png"
+                HeightRequest="50"
+                WidthRequest="50"/>
+            <Label
+                x:Name="TitleLabel"
+                Text="BAHANA MALUKU"
+                FontFamily="Strande2"
+                TextColor="{StaticResource Black}"
+                VerticalTextAlignment="Center"
+                VerticalOptions="Center" 
+                HeightRequest="50"
+                Padding="10, 0, 0, 0"
+                FontSize="Medium" />
+        </HorizontalStackLayout>
+    </Shell.TitleView>
+
+    <Shell.ToolbarItems>
+        <ToolbarItem x:Name="AddToolbarItem" IconImageSource="Resources/Images/menus.png" Command="{Binding AddCommand}" />
+    </Shell.ToolbarItems>
+
+    <TabBar  Shell.TabBarBackgroundColor="Transparent"
+            Shell.TabBarTitleColor="MediumBlue"
+            Shell.TabBarUnselectedColor="Gray" >
+        <Tab Title="Home" Icon="Resources/Images/home.png">
+            <ShellContent ContentTemplate="{DataTemplate views:Views.Home.PageHome}" />
+        </Tab>
+        <Tab Title="Account" Icon="Resources/Images/user.png">
+            <ShellContent ContentTemplate="{DataTemplate views:Views.Account.PageAccount}" />
+        </Tab>
+        <Tab Title="History" Icon="Resources/Images/history.png">
+            <ShellContent ContentTemplate="{DataTemplate views:Views.History.PageHistory}" />
+        </Tab>
+        <Tab Title="Notification" Icon="Resources/Images/bell.png">
+            <ShellContent ContentTemplate="{DataTemplate views:Views.Notification.PageNotification}" />
+        </Tab>
+    </TabBar>
+</Shell>

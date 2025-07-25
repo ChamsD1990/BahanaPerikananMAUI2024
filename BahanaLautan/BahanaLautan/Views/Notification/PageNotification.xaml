@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.ListView"
+             x:Class="BahanaLautan.Views.Notification.PageNotification"
+             Title="PageNotification">
+
+    <Grid
+        Padding="0, 10, 0, 0"
+        HorizontalOptions="FillAndExpand"
+        VerticalOptions="FillAndExpand"
+        BackgroundColor="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <!-- ListView -->
+        <syncfusion:SfListView Grid.Row="0" x:Name="listView" ItemsSource="{Binding Items}" ItemSize="90" 
+                               
+                               BackgroundColor="Transparent">
+            <syncfusion:SfListView.ItemTemplate>
+                <DataTemplate>
+                    <SwipeView BackgroundColor="Transparent">
+                        <SwipeView.RightItems>
+                            <SwipeItems>
+                                <SwipeItem 
+                                    IconImageSource="delete.png"
+                                    BackgroundColor="Red"
+                                    Command="{Binding Source={RelativeSource 
+                                    AncestorType={x:Type ContentPage}}, Path=BindingContext.DeleteCommand}"
+                                    CommandParameter="{Binding .}"/>
+                            </SwipeItems>
+                        </SwipeView.RightItems>
+
+                        <StackLayout Padding="10, 5, 10, 0" HeightRequest="{Binding ItemHeight}" >
+                            <Frame  
+                                BorderColor="Gray"
+                                CornerRadius="8"
+                                HasShadow="True"
+                                BackgroundColor="White" HeightRequest="80" Padding="10, 10, 0, 0">
+
+                                <StackLayout Padding="0">
+                                    <Grid ColumnDefinitions="Auto, *" Padding="0">
+                                        <Image Grid.Column="0" Source="{Binding ImageSource}" WidthRequest="50" HeightRequest="50" />
+                                        <StackLayout Grid.Column="1" Spacing="5" Margin="20, 0, 0, 0" Padding="0">
+                                            <Label Text="{Binding Title}" FontAttributes="Bold" FontSize="18" Padding="0"/>
+                                            <Label Text="{Binding Description}" FontSize="12"/>
+                                        </StackLayout>
+                                    </Grid>
+                                </StackLayout>
+                            </Frame>
+
+                            <!-- Divider line between items -->
+                            <BoxView HeightRequest="1" BackgroundColor="Transparent" Margin="0,10,0,0"/>
+                        </StackLayout>
+
+                    </SwipeView>
+                </DataTemplate>
+            </syncfusion:SfListView.ItemTemplate>
+        </syncfusion:SfListView>
+ 
+        <BoxView Color="Black" Opacity="0.5" IsVisible="False" x:Name="overlay" />
+    </Grid>
+</ContentPage>

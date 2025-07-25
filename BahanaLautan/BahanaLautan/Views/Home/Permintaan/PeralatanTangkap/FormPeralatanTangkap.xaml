@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BahanaLautan.Views.Home.Permintaan.PeralatanTangkap.FormPeralatanTangkap"
+             Title="FormPeralatanTangkap">
+
+    <ScrollView>
+        <StackLayout Padding="20, 0, 20, 0">
+            <Grid x:Name="MainGrid" HorizontalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <!---->
+
+                <VerticalStackLayout Grid.Row="0" Padding="0" Margin="0, 0, 0, 20"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand">
+                    <Label Text="No Form Permintaan Peralatan Tangkap"/>
+                    <Frame BorderColor="Gray" Padding="0" BackgroundColor="Gray">
+                        <Entry Placeholder="Enter No Form" IsReadOnly="True"/>
+                    </Frame>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Grid.Row="1" Padding="0" Margin="0, 0, 0, 20"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand">
+                    <Label Text="No Reff Form Atur Kelompok Kerja"/>
+                    <Frame BorderColor="Gray" Padding="0" BackgroundColor="Gray">
+                        <Entry Placeholder="Enter No Form" IsReadOnly="True"/>
+                    </Frame>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Grid.Row="2" Padding="0" Margin="0, 0, 0, 20"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand">
+                    <Label Text="Select Date:"/>
+                    <Frame BorderColor="Gray" Padding="0" BackgroundColor="Gray">
+                        <DatePicker x:Name="datePicker" TextColor="White"/>
+                    </Frame>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Grid.Row="3" Padding="0" Margin="0, 0, 0, 20"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand">
+                    <Label Text="User"/>
+                    <Frame BorderColor="Gray" Padding="0" BackgroundColor="Gray">
+                        <Entry Placeholder="Enter User" IsReadOnly="True"/>
+                    </Frame>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Grid.Row="4" Padding="0" Margin="0, 0, 0, 20"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand">
+                    <Label Text="Jabatan"/>
+                    <Frame BorderColor="Gray" Padding="0" BackgroundColor="Gray">
+                        <Entry Placeholder="Enter Jabatan" IsReadOnly="True"/>
+                    </Frame>
+                </VerticalStackLayout>
+
+
+                <VerticalStackLayout Grid.Row="5" Padding="0" Margin="0, 0, 0, 20"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand">
+                    <Label Text="Kapal"/>
+                    <Frame BorderColor="Gray" Padding="0" BackgroundColor="Gray">
+                        <Entry Placeholder="Enter Kapal" IsReadOnly="True"/>
+                    </Frame>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Grid.Row="6" Padding="0" Margin="0, 0, 0, 20"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand">
+                    <Label Text="Group"/>
+                    <Frame BorderColor="Gray" Padding="0" BackgroundColor="Gray">
+                        <Entry Placeholder="Enter Group" IsReadOnly="True"/>
+                    </Frame>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Grid.Row="7" Padding="0" Margin="0, 0, 0, 20"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand">
+                    <Label Text="Homebase"/>
+                    <Frame BorderColor="Gray" Padding="0" BackgroundColor="Gray">
+                        <Entry Placeholder="Isi Homebase" IsReadOnly="True"/>
+                    </Frame>
+                </VerticalStackLayout>
+
+
+
+                <VerticalStackLayout Grid.Row="8" Padding="0" Margin="0, 0, 0, 20"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand">
+                    <Label Text="Note Lokasi Kapal"/>
+                    <Frame BorderColor="Gray" Padding="0">
+                        <Entry Placeholder="Isi manual" />
+                    </Frame>
+                </VerticalStackLayout>
+
+
+                <VerticalStackLayout Grid.Row="9" Padding="0" Margin="0, 0, 0, 10"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand">
+                    <Frame BorderColor="Gray" CornerRadius="8" Padding="10" HasShadow="True">
+                        <VerticalStackLayout>
+                            <Label Text="Alat" FontAttributes="Bold" FontSize="22" Padding="0, 0, 20, 0"/>
+
+                            <VerticalStackLayout Grid.Row="8" Padding="0" Margin="0, 0, 0, 10"
+                                VerticalOptions="FillAndExpand"
+                                HorizontalOptions="FillAndExpand">
+                                <Label Text="Pilih Jenis Alat Tangkap" />
+                                <Frame BorderColor="Gray" Padding="0">
+                                    <Picker x:Name="MyPicker"
+                            Title="Choose an option" >
+                                        <Picker.ItemsSource>
+                                            <x:Array Type="{x:Type x:String}">
+                                                <x:String>Jala</x:String>
+                                                <x:String>Pancing</x:String>
+                                            </x:Array>
+                                        </Picker.ItemsSource>
+                                    </Picker>
+                                </Frame>
+                            </VerticalStackLayout>
+                            <VerticalStackLayout Grid.Row="8" Padding="0" Margin="0, 0, 0, 10"
+                                VerticalOptions="FillAndExpand"
+                                HorizontalOptions="FillAndExpand">
+                                <HorizontalStackLayout
+                            HorizontalOptions="FillAndExpand">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+
+
+                                        <!-- First Row -->
+                                        <VerticalStackLayout Grid.Row="0" Grid.Column="0">
+                                            <Label Text="1 Set" />
+                                            <CheckBox x:Name="MyCheckBox" />
+                                        </VerticalStackLayout>
+
+                                        <!-- Second Row -->
+                                        <HorizontalStackLayout Grid.Row="0" Grid.Column="1">
+                                            <Label Text="Jika dicheckbox maka semua otomatis terisi, jika tidak isi manual!" WidthRequest="200"/>
+                                        </HorizontalStackLayout>
+                                    </Grid>
+                                </HorizontalStackLayout>
+                            </VerticalStackLayout>
+                            <VerticalStackLayout Grid.Row="8" Padding="0" Margin="0, 0, 0, 10"
+                                VerticalOptions="FillAndExpand"
+                                HorizontalOptions="FillAndExpand">
+                                <Label Text="Alias"/>
+                                <Frame BorderColor="Gray" Padding="0" BackgroundColor="Gray">
+                                    <Entry Placeholder="mengikuti jenis Alat Tangkap yang dipilih"/>
+                                </Frame>
+                            </VerticalStackLayout>
+                            <VerticalStackLayout Grid.Row="8" Padding="0" Margin="0, 0, 0, 10"
+                                VerticalOptions="FillAndExpand"
+                                HorizontalOptions="FillAndExpand">
+                                <Label Text="Metode Tangkap"/>
+                                <Frame BorderColor="Gray" Padding="0" BackgroundColor="Gray">
+                                    <Entry Placeholder="mengikuti jenis Alat Tangkap yang dipilih" />
+                                </Frame>
+                            </VerticalStackLayout>
+                            <VerticalStackLayout Grid.Row="8" Padding="0" Margin="0, 0, 0, 10"
+    VerticalOptions="FillAndExpand"
+    HorizontalOptions="FillAndExpand">
+
+                                <Label Text="Jumlah Alat yang diminta"/>
+                                <Frame BorderColor="Gray" Padding="0" >
+                                    <Entry Placeholder="Masukkan jumlah alat yang diminta" PlaceholderColor="Black"/>
+                                </Frame>
+                            </VerticalStackLayout>
+                        </VerticalStackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+
+
+                <VerticalStackLayout Grid.Row="10" Padding="0" Margin="0, 0, 0, 20"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand">
+                    <Frame 
+                        BackgroundColor="Blue" 
+                        Padding="10" CornerRadius="5" HasShadow="True" Margin="0,10,0,0" 
+                        HorizontalOptions="FillAndExpand">
+                        <HorizontalStackLayout 
+                            VerticalOptions="CenterAndExpand"
+                            HorizontalOptions="CenterAndExpand">
+                            <Label Text="Simpan" TextColor="White" VerticalOptions="FillAndExpand" 
+                                   Margin="5,0" VerticalTextAlignment="Center" 
+                                   HorizontalOptions="FillAndExpand"
+                                   HorizontalTextAlignment="Center"/>
+                        </HorizontalStackLayout>
+                        <!--
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnListPerbaikan" />
+                </Frame.GestureRecognizers>
+                -->
+                    </Frame>
+                </VerticalStackLayout>
+            </Grid>
+        </StackLayout>
+    </ScrollView>
+
+
+
+</ContentPage>

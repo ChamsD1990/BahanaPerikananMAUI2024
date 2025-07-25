@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BahanaLautan.Views.Home.Permintaan.PagePermintaan"
+             Shell.FlyoutBehavior="Disabled"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.ListView"
+             xmlns:effectsView="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
+             xmlns:local="clr-namespace:BahanaLautan.Source.Repository"
+             Title="Index">
+
+    <ContentPage.BindingContext>
+        <local:RepoMenuPermintaan x:Name="ModelMenuPermintaan" />
+    </ContentPage.BindingContext>
+
+    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="10, 0, 10, 0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Label
+            x:Name="label_user"
+            HorizontalOptions="StartAndExpand"
+            VerticalOptions="StartAndExpand"
+            FontAttributes="Bold"
+            FontSize="20"   
+            Grid.Row="0" />
+
+        <StackLayout Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+            <syncfusion:SfListView ItemsSource="{Binding ListPermintaan}" 
+                                   ItemTemplate="{StaticResource ItemTemplate}" 
+                                   VerticalOptions="FillAndExpand" 
+                                   ItemSize="60" >
+                <syncfusion:SfListView.ItemsLayout >
+                    <syncfusion:GridLayout SpanCount="1" />
+                </syncfusion:SfListView.ItemsLayout>
+            </syncfusion:SfListView>
+        </StackLayout>
+    </Grid>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="ItemTemplate">
+                <ViewCell>
+                    <effectsView:SfEffectsView 
+                        VerticalOptions="FillAndExpand"
+                        HorizontalOptions="FillAndExpand" 
+                        AnimationCompleted="SfEffectsView_AnimationCompleted">
+                        <Frame BorderColor="Gray" CornerRadius="5" Margin="5" Padding="0">
+                            <StackLayout Padding="10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                <Grid x:Name="MenuList" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="0.9*"/> 
+                                        <ColumnDefinition Width="0.1*"/> 
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Text="{Binding BoxName}" 
+                                       HorizontalOptions="Start" 
+                                       FontSize="15" 
+                                       FontAttributes="Bold" 
+                                       x:Name="listName" 
+                                       VerticalOptions="Center" />
+                                                    <Image Source="{Binding ImageSource}" 
+                                       HeightRequest="25" 
+                                       HorizontalOptions="End" 
+                                       VerticalOptions="Center" 
+                                       x:Name="Chevron" 
+                                       Grid.Column="1"/>
+                                </Grid>
+                            </StackLayout>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="getEventMenu"/>
+                            </Frame.GestureRecognizers>
+                        </Frame>
+                    </effectsView:SfEffectsView>
+
+                </ViewCell>
+            </DataTemplate>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+</ContentPage>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:tabView="clr-namespace:Syncfusion.Maui.TabView;assembly=Syncfusion.Maui.TabView" 
+             x:Class="BahanaLautan.Views.History.PageHistory"
+             BackgroundColor="{DynamicResource PageBackgroundColor}"
+             Shell.NavBarHasShadow="True"
+             Title="PageHistory">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <tabView:SfTabView Grid.Row="0" x:Name="tabView">
+            <tabView:SfTabView.Items>
+                <tabView:SfTabItem Header="Orders">
+                    <tabView:SfTabItem.Content>
+                        <Grid Margin="10,5" HorizontalOptions="Center" VerticalOptions="Center">
+                            <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                                <Image Source="Resources/Images/no_order_found.png" WidthRequest="100" />
+                                <Label Text="no list order" HorizontalOptions="Center" VerticalOptions="Center" />
+                            </VerticalStackLayout>
+                        </Grid>
+                    </tabView:SfTabItem.Content>
+                </tabView:SfTabItem>
+
+                <tabView:SfTabItem Header="Process">
+                    <tabView:SfTabItem.Content>
+                        <Grid Margin="10,5" HorizontalOptions="Center" VerticalOptions="Center">
+                            <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                                <Image Source="Resources/Images/no_order_found.png" WidthRequest="100" />
+                                <Label Text="no list order" HorizontalOptions="Center" VerticalOptions="Center" />
+                            </VerticalStackLayout>
+                        </Grid>
+                    </tabView:SfTabItem.Content>
+                </tabView:SfTabItem>
+
+                <tabView:SfTabItem Header="Finish">
+                    <tabView:SfTabItem.Content>
+                        <Grid Margin="10,5" HorizontalOptions="Center" VerticalOptions="Center">
+                            <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                                <Image Source="Resources/Images/no_order_found.png" WidthRequest="100" />
+                                <Label Text="no list order" HorizontalOptions="Center" VerticalOptions="Center" />
+                            </VerticalStackLayout>
+                        </Grid>
+                    </tabView:SfTabItem.Content>
+                </tabView:SfTabItem>
+            </tabView:SfTabView.Items>
+        </tabView:SfTabView>
+    </Grid>
+</ContentPage>
